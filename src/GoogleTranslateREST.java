@@ -2,8 +2,10 @@
 Go to Google Cloud Console: Open: https://console.cloud.google.com
 Click “APIs & Services”
 Click “Library”
-Click Create
-Download JSON key
+Cloud Translation API
+Click on Enable
+Create Credentials → API Key
+Save off the Key to paste in
 */
 
 import java.io.*;
@@ -19,7 +21,9 @@ public class GoogleTranslateREST {
 
         System.out.print("Enter the API Key: ");
         String apiKey = sc.nextLine();
-        String text = "Hello world";
+
+        System.out.print("Enter the plainttext: ");
+        String text = sc.nextLine();
 
         String urlStr = "https://translation.googleapis.com/language/translate/v2"
                 + "?key=" + apiKey;
@@ -31,7 +35,7 @@ public class GoogleTranslateREST {
         conn.setDoOutput(true);
         conn.setRequestProperty("Content-Type", "application/json");
 
-        String jsonInput = "{ \"q\": \"" + text + "\", \"target\": \"es\" }";
+        String jsonInput = "{ \"q\": \"" + text + "\", \"target\": \"ar\" }";
 
         try (OutputStream os = conn.getOutputStream()) {
             os.write(jsonInput.getBytes("utf-8"));
