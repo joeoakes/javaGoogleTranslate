@@ -1,7 +1,7 @@
 /*
 Go to Google Cloud Console: Open: https://console.cloud.google.com
-Click “Select a project” → “New Project”
-Give it a name (e.g., TranslateApp)
+Click “APIs & Services”
+Click “Library”
 Click Create
 Download JSON key
 */
